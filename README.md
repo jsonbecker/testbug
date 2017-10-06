@@ -8,6 +8,7 @@ This only happens when running with `devtools::test()` or R CMD tools on Mac OS.
 
 I do not see these errors on Linux.
 
+
 ``` r
 ==> devtools::test()
 
@@ -63,8 +64,34 @@ nanodbc/nanodbc.cpp:1587: HY000: internal SAVEPOINT failed
 18: result_insert_dataframe(rs@ptr, values)
 
 DONE ===========================================================================
-Warning message:
-package ‘dplyr’ was built under R version 3.4.2 
+```
+Opening a fresh R session and loading `DBI`, `odbc`, and `dplyr`:
+
+```r
+> sessionInfo()
+R version 3.4.2 (2017-09-28)
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+Running under: macOS High Sierra 10.13
+
+Matrix products: default
+BLAS: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/3.4/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] dplyr_0.7.4 DBI_0.7     odbc_1.1.1 
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_0.12.12     assertthat_0.2.0 R6_2.2.2         magrittr_1.5    
+ [5] rlang_0.1.2      blob_1.1.0       bindrcpp_0.2     tools_3.4.2     
+ [9] bit64_0.9-7      glue_1.1.1       bit_1.1-12       hms_0.3         
+[13] yaml_2.1.14      compiler_3.4.2   pkgconfig_2.0.1  bindr_0.1       
+[17] tibble_1.3.4    
 ```
 
 
